@@ -1,0 +1,31 @@
+@import "../../node_modules/bulma/bulma.sass";
+
+.email-icon,
+.youtube-icon,
+.twitter-icon,
+.instagram-icon,
+.facebook-icon {
+    color: #333;
+    transition: color, 0.3s;
+}
+
+.email-icon:hover{
+    color: #F7F450;
+}
+
+.youtube-icon:hover{
+    color: #F03030;
+}
+
+.twitter-icon:hover{
+    color: #4BF0F0;
+}
+
+.instagram-icon:hover {
+    color: #DE40F5;
+}
+
+.facebook-icon:hover {
+    color: #3040F0;
+}
+
