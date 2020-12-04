@@ -84,7 +84,7 @@
     </body>
     <footer class="footer">
         <div class="container has-text-centered">
-            <span class="is-size-6" style="display: block; font-weight: bold;">Jamaica's First Social Online Marketplace</span>
+            <span class="is-size-6" style="display: block; font-weight: bold;">{{env('APP_SLOGAN')}}</span>
             <span style="display: block;">{{env('APP_NAME')}} &copy</span><br/>
             <div class=" is-size-3" style="letter-spacing: 1em;">
                 <a class="icon youtube-icon" href="https://youtube.com">
