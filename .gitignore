@@ -12,3 +12,4 @@ npm-debug.log
 yarn-error.log
 notepad.yml
 /public/js
+/public/mix-manifest.json
