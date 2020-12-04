@@ -12,7 +12,7 @@
         </div>
         <div class="columns">
             <div class="column has-text-centered is-full">
-                <router-link to="/recent" class="has-text-white"><button class="button is-rounded is-primary">Recent</button></router-link>
+                <router-link to="/recent" class="has-text-white router-link-active"><button class="button is-rounded is-primary">Recent</button></router-link>
                 <router-link to="/popular" class="has-text-white"><button class="button is-rounded is-primary">Popular</button></router-link>
             </div>
         </div>
