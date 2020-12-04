@@ -1,35 +1,38 @@
 @extends("layout.default")
-@section("title","index")
+@section("title","Homepage")
 @section('content')
     <div id="app">
         <carousel/>
     </div>
-{{--     <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
- --}}
     <div id="vue-router">
-      <h1>Hello App!</h1>
-      <p>
-        <!-- use router-link component for navigation. -->
-        <!-- specify the link by passing the `to` prop. -->
-        <!-- <router-link> will be rendered as an `<a>` tag by default -->
-        <router-link to="/foo">Go to Foo</router-link>
-        <router-link to="/bar">Go to Bar</router-link>
-      </p>
-      <!-- route outlet -->
-      <!-- component matched by the route will render here -->
-      <router-view></router-view>
+        <div class="columns">
+            <div class="column has-text-centered">
+                <h1 class="is-size-2 mt-3 mb-3">Welcome to {{env('APP_NAME')}}!</h1>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column has-text-centered is-full">
+                <router-link to="/recent" class="has-text-white"><button class="button is-rounded is-primary">Recent</button></router-link>
+                <router-link to="/popular" class="has-text-white"><button class="button is-rounded is-primary">Popular</button></router-link>
+            </div>
+        </div>
+        <router-view></router-view>
     </div>
     <style type="text/css">
         .router-link-active {
-          color: red;
+          font-weight: bold;
         }
     </style>
-    Jamart, Jamaica's First Social Online Marketplace
 @endsection
 @section('scripts')
-    <script src="{{asset('/js/index.js')}}"></script>
-    <script type="text/javascript">
-
+    <script type="text/html" id="recent-vue-template">
+        <div>Recent Template</div>
     </script>
+    <script type="text/html" id="popular-vue-template">
+        <div>Popular Template</div>
+    </script>
+    <script src="{{mix('/js/index.js')}}"></script>
+    <script type="text/javascript"></script>
+
+
 @endsection

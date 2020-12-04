@@ -4,22 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
-    <title>Webstore - @yield('title')</title>
+    <title>{{env('APP_NAME')}} &copy - Jamaica's First Social Online Marketplace - @yield('title')</title>
 </head>
 <body>
     <header>
-        <div class="hero is-primary">
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="title">
-                Webstore Header
-              </h1>
-              <nav>
-
-              </nav>
-            </div>
-          </div>
-        </div>
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
             <a class="navbar-item" href="https://bulma.io">
@@ -35,12 +23,12 @@
 
           <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-              <a class="navbar-item">
+              <a class="navbar-item" href="{{route('index')}}">
                 Home
               </a>
 
-              <a class="navbar-item">
-                Documentation
+              <a class="navbar-item" href="{{route('blog')}}">
+                Blog
               </a>
 
               <div class="navbar-item has-dropdown is-hoverable">
@@ -80,13 +68,24 @@
             </div>
           </div>
         </nav>
+        <div class="hero is-white">
+          <div class="hero-body">
+            <div class="container">
+              <form method="get" action="{{route('search')}}">
+                <input type="text"   class="pl-3" style="height:2.5rem; font-size: 1rem; min-width: calc(80%); width: 90%;" name="s" placeholder="Search for Products"/>
+                <input type="submit" class="button is-primary" style="height:2.5rem; min-width: calc(7%);" value="Search">
+              </form>
+            </div>
+          </div>
+        </div>
     </header>
     <body>
         @yield('content')
     </body>
     <footer class="footer">
         <div class="container has-text-centered">
-            <i class="fabs fa-twitter"></i>WebMart&copy <br/>
+            <span class="is-size-6" style="display: block; font-weight: bold;">Jamaica's First Social Online Marketplace</span>
+            <span style="display: block;">{{env('APP_NAME')}} &copy</span><br/>
             <div class=" is-size-3" style="letter-spacing: 1em;">
                 <a class="icon youtube-icon" href="https://youtube.com">
                     <i class="fab fa-youtube"></i>

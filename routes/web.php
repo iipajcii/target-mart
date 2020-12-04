@@ -14,8 +14,8 @@ use App\Http\Controllers\MainController;
 |
 */
 
-Route::get('/', [MainController::class,'index']);
-Route::get('blog',[MainController::class,'blog']);
-Route::get('search', [MainController::class,'search']);
-Route::get('product',[MainController::class,'product']);
-Route::get('purchase',[MainController::class,'purchase']);
+Route::get('/',[MainController::class,'index'])->name('index');
+Route::get('blog',[MainController::class,'blog'])->name('blog');
+Route::get('search',[MainController::class,'search'])->name('search');
+Route::get('product',[MainController::class,'product'])->name('product');
+Route::get('purchase',[MainController::class,'purchase'])->name('purchase');
