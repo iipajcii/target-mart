@@ -28,8 +28,8 @@
     <script type="text/html" id="recent-vue-template">
         <div class="columns is-multiline p-5">
         @foreach($recent as $product)
-                <div class="column is-one-fifth">
-                    <div class="card">
+                <div class="column is-one-fifth" style="align-items: stretch; display: flex;">
+                    <div class="card" style="align-items: stretch; width: 100%;">
                         <div class="card-image">
                             <picture class="image is-square">
                                 <source srcset="{{asset(str_replace('public','storage',$product->image).'.square.webp')}}" type="image/webp"/>
@@ -57,8 +57,8 @@
     <script type="text/html" id="popular-vue-template">
         <div class="columns is-multiline p-5">
         @foreach($popular as $product)
-                <div class="column is-one-fifth">
-                    <div class="card">
+                <div class="column is-one-fifth" style="align-items: stretch; display: flex;">
+                    <div class="card" style="align-items: stretch; width: 100%;">
                         <div class="card-image">
                             <picture class="image is-square">
                                 <source srcset="{{asset(str_replace('public','storage',$product->image).'.square.webp')}}" type="image/webp"/>
