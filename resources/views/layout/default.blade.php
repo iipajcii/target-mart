@@ -10,8 +10,8 @@
     <header>
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-              <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            <a class="navbar-item" href="{{route('index')}}">
+              <span class="has-text-primary" style="display: block; width:'112'; height:'28'"><i class="fas fa-bullseye"></i> TARGET MART</span>
             </a>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
