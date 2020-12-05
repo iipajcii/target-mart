@@ -24,7 +24,7 @@ class MainController extends Controller
 
     public function search(Request $request)
     {
-        return view('search');
+        return view('search')->with('search',$request->s)->with('products',Product::search($request->s));
     }
 
     public function products(Request $request)
@@ -53,6 +53,11 @@ class MainController extends Controller
     public function login(Request $request)
     {
         return view('login');
+    }
+
+    public function signup(Request $request)
+    {
+        return view('signup');
     }
 
     public function dashboard(Request $request)
