@@ -68,11 +68,11 @@
             </div>
           </div>
         </nav>
-        <div class="hero is-white">
+        <div class="hero is-white" style="border-bottom: solid #DDD 1px; border-top: solid #DDD 1px;">
           <div class="hero-body">
             <div class="container">
               <form method="get" action="{{route('search')}}">
-                <input type="text"   class="pl-3" style="height:2.5rem; font-size: 1rem; min-width: calc(80%); width: 90%;" name="s" placeholder="Search for Products"/>
+                <input type="text"   class="pl-3" style="box-shadow: 0px 0px 2px #CCC; border-style: none; height:2.5rem; font-size: 1rem; min-width: calc(80%); width: 90%; color: #555;" name="s" placeholder="Search for Products"/>
                 <input type="submit" class="button is-primary" style="height:2.5rem; min-width: calc(7%);" value="Search">
               </form>
             </div>
