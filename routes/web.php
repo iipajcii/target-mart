@@ -19,6 +19,7 @@ Route::get('blog',[MainController::class,'blog'])->name('blog');
 Route::get('search',[MainController::class,'search'])->name('search');
 Route::get('products/',[MainController::class,'products'])->name('products');
 Route::get('product/{id}',[MainController::class,'product'])->name('product');
-Route::get('purchase',[MainController::class,'purchase'])->name('purchase');
+Route::get('purchase/{id}',[MainController::class,'purchase'])->name('purchase');
 Route::get('login',[MainController::class,'login'])->name('login');
+Route::get('dashboard',function(){return view('login');});
 Route::post('dashboard',[MainController::class,'dashboard'])->name('dashboard');
