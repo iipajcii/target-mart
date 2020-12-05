@@ -8,8 +8,8 @@
     </div>
     <div class="columns is-multiline p-5">
         @foreach($products as $product)
-                <div class="column is-one-fifth">
-                    <div class="card">
+                <div class="column is-one-fifth" style="align-items: stretch; display: flex;">
+                    <div class="card" style="align-items: stretch; width: 100%;">
                         <div class="card-image">
                             <picture class="image is-square">
                                 <source srcset="{{asset(str_replace('public','storage',$product->image).'.square.webp')}}" type="image/webp"/>
