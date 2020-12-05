@@ -19,6 +19,8 @@ class Product extends Model
     {
         $product = new Product();
         $product->name = $req->name;
+        $product->user = $req->user;
+        $product->unique_views = 0;
         $product->description = $req->description;
         $product->image = $req->image;
         $newImageName = rand().md5(time());
@@ -123,5 +125,15 @@ class Product extends Model
     public static function recent()
     {
         return Product::orderBy('created_at','desc')->take(10)->where("is-hidden",false)->get();
+    }
+
+    public static function related($id)
+    {
+        return Product::orderBy('created_at','desc')->take(6)->where("is-hidden",false)->where("id","!=",$id)->get();
+    }
+
+    public static function popular()
+    {
+        return Product::orderBy('unique_views','desc')->take(10)->where("is-hidden",false)->get();
     }
 }
