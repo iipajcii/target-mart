@@ -51,7 +51,7 @@
                             <div class="content mt-3">
                                 @foreach(explode("+",$product->categories) as $tag)<span class="tag is-info mr-1 mb-1">{{$tag}}</span>@endforeach
                                 <br/><span style="font-size: 0.9rem;">{{--substr($product->description,0,68)--}} ...</span>
-                                <a href="{{route('product',['id' => $product->id])}}" target="_blank" style="color:white"><button class="button is-primary" style="width: 100%; position: absolute; left: 0%; bottom: 0; border-radius: 0;">View Product</button></a>
+                                <a href="{{route('product',['id' => $product->id])}}" style="color:white"><button class="button is-primary" style="width: 100%; position: absolute; left: 0%; bottom: 0; border-radius: 0;">View Product</button></a>
                             </div>
                         </div>
                     </div>

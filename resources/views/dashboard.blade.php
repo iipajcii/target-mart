@@ -175,6 +175,7 @@
                             <label class="label">Name</label>
                             <div class="control">
                                 <input class="input" type="text" placeholder="e.g The New Awesome Product" name="name"/>
+                                <input class="input" type="hidden" value="{{$user->name}}" name="user"/>
                             </div>
                         </div>
                         <div class="field">
