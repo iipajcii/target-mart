@@ -28,7 +28,36 @@
     <script type="text/html" id="recent-vue-template">
         <div class="columns is-multiline p-5">
         @foreach($recent as $product)
-                <div class="column is-2">
+                <div class="column is-one-fifth">
+                    <div class="card">
+                        <div class="card-image">
+                            <picture class="image is-square">
+                                <source srcset="{{asset(str_replace('public','storage',$product->image).'.square.webp')}}" type="image/webp"/>
+                                    <img src="{{asset(str_replace('public','storage',$product->image).'.square.jpeg')}}" type="image/jpeg" alt="Website Image"/>
+                                </picture>
+                        </div>
+                        <div class="card-content">
+                            <div class="media mb-1">
+                                <div class="media-content">
+                                    <p class="title is-5">{{$product->name}}</p>
+                                    <p class="subtitle is-6">{{"@".$product->user}}</p>
+                                </div>
+                            </div>
+                            <div class="content mt-3">
+                                @foreach(explode("+",$product->categories) as $tag)<span class="tag is-info mr-1 mb-1">{{$tag}}</span>@endforeach
+                                <br/><span style="font-size: 0.9rem;">{{--substr($product->description,0,68)--}} ...</span>
+                                <a href="{{route('product',['id' => $product->id])}}" target="_blank" style="color:white"><button class="button is-primary" style="width: 100%; position: absolute; left: 0%; bottom: 0; border-radius: 0;">View Product</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </script>
+    <script type="text/html" id="popular-vue-template">
+        <div class="columns is-multiline p-5">
+        @foreach($popular as $product)
+                <div class="column is-one-fifth">
                     <div class="card">
                         <div class="card-image">
                             <picture class="image is-square">
@@ -45,19 +74,14 @@
                             </div>
                             <div class="content mt-3">
                                 @foreach(explode("+",$product->categories) as $tag)<span class="tag is-info mr-1 mb-1">{{$tag}}</span>@endforeach
-                                <br/><span style="font-size: 0.9rem;">{{substr($product->description,0,68)}} ...</span>
-                                <a href="{{$product->link}}" target="_blank" style="color:white">
-                                    <a href="{{route('product',['id' => $product->id])}}"><button class="button is-primary" style="margin:1%; padding: 1%; width: 90%; position: absolute; left: 3%; bottom: 2px;">View Product</button></a>
-                                </a>
+                                <br/><span style="font-size: 0.9rem;">{{--substr($product->description,0,68)--}} ...</span>
+                                <a href="{{route('product',['id' => $product->id])}}" target="_blank" style="color:white"><button class="button is-primary" style="width: 100%; position: absolute; left: 0%; bottom: 0; border-radius: 0;">View Product</button></a>
                             </div>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-    </script>
-    <script type="text/html" id="popular-vue-template">
-        <div>Popular Template</div>
     </script>
     <script src="{{mix('/js/index.js')}}"></script>
     <script type="text/javascript">
