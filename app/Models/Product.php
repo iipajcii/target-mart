@@ -17,7 +17,7 @@ class Product extends Model
 
     public static function add_product(Request $req)
     {
-        $product = new product();
+        $product = new Product();
         $product->name = $req->name;
         $product->description = $req->description;
         $product->image = $req->image;
@@ -108,7 +108,7 @@ class Product extends Model
 
     public static function toggle_product(Request $req)
     {
-        $product = product::findOrFail($req->data);
+        $product = Product::findOrFail($req->data);
         $product['is-hidden'] = !$product['is-hidden'];
         $product->save();
         $action = new Action();
@@ -118,5 +118,10 @@ class Product extends Model
         $action->save();
         if($product['is-hidden']){return 0;}
         else {return 1;}
+    }
+
+    public static function recent()
+    {
+        return Product::orderBy('created_at','desc')->take(10)->where("is-hidden",false)->get();
     }
 }
