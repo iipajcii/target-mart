@@ -136,4 +136,19 @@ class Product extends Model
     {
         return Product::orderBy('unique_views','desc')->take(10)->where("is-hidden",false)->get();
     }
+
+    public static function search($string)
+    {
+        if($string == null || $string == ''){return [];}
+        $string = strtolower($string);
+        $products = Product::where('is-hidden',false)->orderBy('unique_views','desc')->get();
+        $return = [];
+        foreach($products as $product){
+            if(strpos(strtolower($product->name), $string) > -1 || strpos(strtolower($product->categories), $string)  > -1 || strpos(strtolower($product->description), $string)  > -1)
+            {
+                $return[] = $product;
+            }
+        }
+        return $return;
+    }
 }
