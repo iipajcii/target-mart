@@ -13,6 +13,7 @@ class MainController extends Controller
     {
         return view('index')
             ->with("recent",Product::recent())
+            ->with("popular",Product::popular())
         ;
     }
 
@@ -33,12 +34,20 @@ class MainController extends Controller
 
     public function product(Request $request, $id)
     {
-        return view('product')->with('product',Product::findOrFail($id));
+        $product = Product::findOrFail($id);
+        $product->unique_views++;
+        $product->save();
+        return view('product')
+            ->with('product',$product)
+            ->with('related',Product::related($id))
+        ;
     }
 
-    public function purchase(Request $request)
+    public function purchase(Request $request, $id)
     {
-        return view('purchase');
+        return view('purchase')
+           ->with('product',Product::findOrFail($id))
+        ;
     }
 
     public function login(Request $request)
