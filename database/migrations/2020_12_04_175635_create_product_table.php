@@ -17,9 +17,11 @@ class CreateProductTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->string('user',100);
             $table->string('description',500);
             $table->string('image',500)->default("");
             $table->string('categories',200);
+            $table->bigInteger('unique_views');
             $table->boolean('is-hidden');
 	   });
     }
