@@ -33,8 +33,8 @@
         <h2 class="is-size-4 mt-4 mb-5" style="text-align: center;">Related Products:</h2>
     <div class="columns">
         @foreach($related as $product)
-                <div class="column is-2">
-                    <div class="card">
+                <div class="column is-2" style="align-items: stretch; display: flex;">
+                    <div class="card" style="align-items: stretch; width: 100%;">
                         <div class="card-image">
                             <picture class="image is-square">
                                 <source srcset="{{asset(str_replace('public','storage',$product->image).'.square.webp')}}" type="image/webp"/>
